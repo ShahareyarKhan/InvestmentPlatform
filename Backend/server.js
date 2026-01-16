@@ -129,9 +129,6 @@ const connectDB = async () => {
 
 connectDB()
 
-// 2. MIDDLEWARE
-app.use(helmet());
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -169,7 +166,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Error handling should be the last middleware
-app.use(errorHandler);
+
 
 // 5. SERVER EXECUTION
 if (process.env.NODE_ENV !== 'production') {
