@@ -145,14 +145,14 @@ app.use(cors({
 
 // 3. DB CONNECTION MIDDLEWARE
 // This ensures the DB is connected BEFORE any route logic runs
-app.use(async (req, res, next) => {
-  try {
-    await connectDB();
-    next();
-  } catch (err) {
-    res.status(500).json({ success: false, error: 'Database Connection Error' });
-  }
-});
+// app.use(async (req, res, next) => {
+//   try {
+//     await connectDB();
+//     next();
+//   } catch (err) {
+//     res.status(500).json({ success: false, error: 'Database Connection Error' });
+//   }
+// });
 
 // 4. ROUTES
 app.use('/api/auth', authRoutes);
