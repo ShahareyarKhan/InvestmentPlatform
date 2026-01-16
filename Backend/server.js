@@ -127,6 +127,8 @@ const connectDB = async () => {
   }
 };
 
+connectDB()
+
 // 2. MIDDLEWARE
 app.use(helmet());
 app.use(cookieParser());
