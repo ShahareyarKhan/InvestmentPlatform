@@ -9,10 +9,10 @@ const {
   updatePassword,  
   refreshToken
 } = require('../controllers/authController');
-const { protect, loginLimiter } = require('../middleware/auth');
+const { protect} = require('../middleware/auth');
 
 router.post('/register', register);
-router.post('/login', loginLimiter, login);
+router.post('/login',  login);
 router.get('/logout', logout);
 router.get('/me', protect, getMe);
 router.put("/updateprofile",  protect, updateProfile);
