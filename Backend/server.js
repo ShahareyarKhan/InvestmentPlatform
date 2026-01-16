@@ -12,9 +12,6 @@ const investmentRoutes = require('./routes/investment');
 const dashboardRoutes = require('./routes/dashboard');
 const referralRoutes = require('./routes/referral');
 
-// Import middleware
-const errorHandler = require('./middleware/error');
-
 // Import cron jobs
 const { scheduleDailyROI, scheduleWeeklyReport } = require('./utils/cronJobs');
 
@@ -42,13 +39,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
-  message: 'Too many requests from this IP, please try again later.'
-});
-app.use('/api/', limiter);
 
 // API routes
 app.use('/api/auth', authRoutes);
@@ -65,8 +55,7 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Error handler middleware
-app.use(errorHandler);
+
 
 // Database connection
 const connectDB = async () => {
