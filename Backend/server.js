@@ -39,6 +39,7 @@ const corsOptions = {
       'http://localhost:3000',
       'https://investment-platform-shahareyar.vercel.app',
       'https://investment-platform.vercel.app',
+      'https://investment-platform-shahareyar.vercel.app/'
       // Add other domains as needed
     ];
     
