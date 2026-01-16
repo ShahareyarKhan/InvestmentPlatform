@@ -11,11 +11,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': {
-        target: 'https://investment-platform-dusky.vercel.app',
-        changeOrigin: true,
-        secure: false,
-      }
+      '/api': "https://investment-platform-dusky.vercel.app"
     }
   },
   build: {
