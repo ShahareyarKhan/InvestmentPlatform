@@ -206,7 +206,7 @@ const Register = () => {
               <span className="text-2xl font-bold text-gray-900">InvestFlow</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">Already have an account?</span>
+              <span className="text-sm text-gray-600">Already Registered?</span>
               <Link
                 to="/login"
                 className="px-6 py-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
